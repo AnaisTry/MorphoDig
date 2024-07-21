@@ -30,11 +30,12 @@ int main( int argc, char* argv[] )
 {
 
   // QT Stuff
- //QSurfaceFormat::setDefaultFormat(QVTKOpenGLWidget::defaultFormat());
-	//QSurfaceFormat fmt = QVTKOpenGLWidget::defaultFormat();
-	//fmt.setSamples(0);
-	//QSurfaceFormat::setDefaultFormat(fmt);
- QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    // Necessary for QVTKOpenGLWidget to work properly on Mac OS X
+    QSurfaceFormat::setDefaultFormat(QVTKOpenGLWidget::defaultFormat());
+    //QSurfaceFormat fmt = QVTKOpenGLWidget::defaultFormat();
+    //fmt.setSamples(0);
+    //QSurfaceFormat::setDefaultFormat(fmt);
+  QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication app( argc, argv );
   //QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
   #if QT_VERSION >= 0x050000
