@@ -72,14 +72,14 @@ Load CMAKE after Path has been modified. Then add the directory where your .dll 
 
 	install Xcode : 
 
-	xcode-select --install
+		xcode-select --install
 	
 	or
 	https://apps.apple.com/fr/app/xcode/id497799835?l=en-GB&mt=12
 
 	install cmake : https://cmake.org/download/
 
-	echo 'export PATH="/Applications/CMake.app/Contents/bin:$PATH"' >> ~/.zshrc
+		echo 'export PATH="/Applications/CMake.app/Contents/bin:$PATH"' >> ~/.zshrc
 
 	```source ~/.zshrc```
 
