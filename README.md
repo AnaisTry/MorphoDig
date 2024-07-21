@@ -71,9 +71,10 @@ Load CMAKE after Path has been modified. Then add the directory where your .dll 
 0. 	Install the necessary build tools :
 
 	install Xcode : 
-	```
-		xcode-select --install
-	```
+		```
+			xcode-select --install
+
+		```
 	or
 	https://apps.apple.com/fr/app/xcode/id497799835?l=en-GB&mt=12
 
