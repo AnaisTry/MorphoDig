@@ -97,8 +97,7 @@ Load CMAKE after Path has been modified. Then add the directory where your .dll 
 
 2. set up vtk-build :
 
-		mv ~/Downloads/VTK-9.3.1 ~  
-		//replace VTK-9.3.1 by your version of VTK
+		mv ~/Downloads/VTK-9.3.1 ~  //replace VTK-9.3.1 by your version of VTK
 
 		cd ~  
 
