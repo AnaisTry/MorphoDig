@@ -68,6 +68,56 @@ Load CMAKE after Path has been modified. Then add the directory where your .dll 
 
 ## Build morphodig on OS X
 
-MorphoDig has not been compiled yet on Mac Os. Theoretically, MorphoDig should run on Mac without problem (very minor corrections may have to be applied though). Help would be appreciated to compile and distribute MorphoDig on Mac!
-    
-    
+0. 	Install the necessary build tools :
+
+	install Xcode : ```xcode-select --install```
+	or
+	https://apps.apple.com/fr/app/xcode/id497799835?l=en-GB&mt=12
+
+	install cmake : https://cmake.org/download/
+
+	```echo 'export PATH="/Applications/CMake.app/Contents/bin:$PATH"' >> ~/.zshrc```
+
+	```source ~/.zshrc```
+
+	install ninja :
+	```brew install ninja```
+
+	install qt5 : 
+	```brew install qt@5```
+
+		https://wiki.qt.io/Building_Qt_5_from_Git#macOS
+
+		echo 'export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"' >> ~/.zshrc
+
+1. download the latest version of vtk : https://vtk.org/download/
+
+2. set up vtk-build :
+
+	```mv ~/Downloads/VTK-9.3.1 ~```  replace VTK-9.3.1 by your version of VTK
+
+	```cd ~ ```  
+
+	```mkdir vtk-build && cd vtk-build```
+
+	```cmake ../VTK-9.3.1 -DVTK_Group_Imaging=ON -DVTK_Group_Qt=ON -DVTK_Group_Rendering=ON -DVTK_Group_StandAlone=ON -DVTK_Group_Views=ON -DVTK_MODULE_ENABLE_VTK_GUISupportQt=YES```
+	
+	```make -j$(sysctl -n hw.ncpu)```
+
+	```sudo make install```
+
+
+3. install Morphodig :
+	```
+		cd ..
+		git clone https://github.com/morphomuseum/MorphoDig.git
+		mkdir MorphoDig-build
+		cd MorphoDig-build
+		cmake ../MorphoDig
+		make -j$(sysctl -n hw.ncpu)
+	```
+
+4. Run MorphoDig (from the build directory)
+	```
+		./MorphoDig/MorphoDig
+	``` 

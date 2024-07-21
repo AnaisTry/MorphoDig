@@ -2120,7 +2120,7 @@ void MorphoDig::saveSettings()
 	settings.setValue("CURVERIncludeNormalLandmarks", this->MorphoDigCore->Getmui_CURVERIncludeNormalLandmarks());
 	settings.setValue("CURVERExportMilestonesOnce", this->MorphoDigCore->Getmui_CURVERExportMilestonesOnce());
 	size_t numsegs = this->MorphoDigCore->Getmui_SegmentDecimations()->decimation.size();
-	settings.setValue("nsegments", numsegs);
+	settings.setValue("nsegments", static_cast<uint>(numsegs));
 	
 	
 	

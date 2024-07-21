@@ -254,7 +254,8 @@ mqMinimalWidget::~mqMinimalWidget()
 void mqMinimalWidget::renderInternal()
 {
 	cout << "mqMinimalWidget renderInternal" << endl;
-  if (this->isVisible() && this->Internals->ContextView->GetRenderWindow()->IsDrawable())
+//if (this->isVisible() && this->Internals->ContextView->GetRenderWindow()->IsDrawable())
+  if (this->isVisible())
   {
     this->Internals->ContextView->GetRenderWindow()->Render();
   }

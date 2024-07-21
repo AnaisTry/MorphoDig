@@ -1,8 +1,10 @@
 #test Leo!
+#modif Anais
+cmake_minimum_required(VERSION 3.5)
 project(MorphoDig)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-cmake_minimum_required(VERSION 2.8)
+
 
 add_subdirectory(MorphoDig)
 
