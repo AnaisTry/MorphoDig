@@ -81,13 +81,13 @@ Load CMAKE after Path has been modified. Then add the directory where your .dll 
 
 		echo 'export PATH="/Applications/CMake.app/Contents/bin:$PATH"' >> ~/.zshrc
 
-	```source ~/.zshrc```
+		source ~/.zshrc
 
 	install ninja :
-	```brew install ninja```
+		brew install ninja
 
 	install qt5 : 
-	```brew install qt@5```
+		brew install qt@5
 
 		https://wiki.qt.io/Building_Qt_5_from_Git#macOS
 
@@ -97,30 +97,34 @@ Load CMAKE after Path has been modified. Then add the directory where your .dll 
 
 2. set up vtk-build :
 
-	```mv ~/Downloads/VTK-9.3.1 ~```  replace VTK-9.3.1 by your version of VTK
+		mv ~/Downloads/VTK-9.3.1 ~  
+		//replace VTK-9.3.1 by your version of VTK
 
-	```cd ~ ```  
+		cd ~  
 
-	```mkdir vtk-build && cd vtk-build```
+		mkdir vtk-build && cd vtk-build
 
-	```cmake ../VTK-9.3.1 -DVTK_Group_Imaging=ON -DVTK_Group_Qt=ON -DVTK_Group_Rendering=ON -DVTK_Group_StandAlone=ON -DVTK_Group_Views=ON -DVTK_MODULE_ENABLE_VTK_GUISupportQt=YES```
+		cmake ../VTK-9.3.1 -DVTK_Group_Imaging=ON -DVTK_Group_Qt=ON -DVTK_Group_Rendering=ON -DVTK_Group_StandAlone=ON -DVTK_Group_Views=ON -DVTK_MODULE_ENABLE_VTK_GUISupportQt=YES
 	
-	```make -j$(sysctl -n hw.ncpu)```
+		make -j$(sysctl -n hw.ncpu)
 
-	```sudo make install```
+		sudo make install
 
 
 3. install Morphodig :
-	```
+	
 		cd ..
+
 		git clone https://github.com/morphomuseum/MorphoDig.git
-		mkdir MorphoDig-build
-		cd MorphoDig-build
+
+		mkdir MorphoDig-build && cd MorphoDig-build
+
 		cmake ../MorphoDig
+
 		make -j$(sysctl -n hw.ncpu)
-	```
+	
 
 4. Run MorphoDig (from the build directory)
-	```
+	
 		./MorphoDig/MorphoDig
-	``` 
+	
